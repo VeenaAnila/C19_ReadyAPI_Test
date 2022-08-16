@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="search" path="/distributors/search" id="e9c866a3-f1ce-4333-ad9e-30ecd14e4d4a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e9c866a3-f1ce-4333-ad9e-30ecd14e4d4afileName">search</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="b5b179cd-58a3-4763-b639-9d73c815db27" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="8bd2e46d-5685-4399-a375-195bc36134a4" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/distributors/search</con:endpoint>
+      <con:request>{
+	"locationId":10660,
+	"searchTerm":"Dark ",
+	"filters":
+	{
+		"zipCode":"32174",
+	"productClasses":["Spirits"]
+	}}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/distributors/search/distributors/search</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

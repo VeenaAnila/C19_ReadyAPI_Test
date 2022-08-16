@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="88b34975-5821-4158-a8c4-69ce5dd17ee6" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Reccomended_Distributors" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="88b34975-5821-4158-a8c4-69ce5dd17ee6fileName">Reccomended_Distributors</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="c2a88b32-9b88-42a9-a16a-04650fb3bd77">
+    <con:settings/>
+    <con:config service="C19_Recommended_Vendor_list" resourcePath="/distributors/recommended" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="05de9727-87d0-4d58-9fca-2eb54fbd0413" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com</con:endpoint>
+        <con:request>{\r
+   "zipCode" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['stagingData']['companyData']['zipCode']}"\r
+}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/distributors/recommended</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes>
+          <con:addedBasicAuthenticationTypes>SPNEGO/Kerberos</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="2" path="/{stagingId}/status" id="35b0fc7e-5039-4730-9edb-0c6f69bed119" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="35b0fc7e-5039-4730-9edb-0c6f69bed119fileName">2</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>stagingId</con:name>
+      <con:value>98131</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>98131</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="21002f6e-65f0-4088-9f36-c8b8c56d9320" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="f05d487d-9292-4074-adfa-aa7c2f13546a" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/registration</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://dev-api.fintech.com/registration/%7B98131%7D/status</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>stagingId</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

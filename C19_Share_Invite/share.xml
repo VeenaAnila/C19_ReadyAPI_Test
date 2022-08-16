@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="share" path="/invitations/share" id="e4a8c8e5-d3ee-4b11-abc1-4743abde25ad" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e4a8c8e5-d3ee-4b11-abc1-4743abde25adfileName">share</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="7711c2b3-ac62-49ee-b230-40cd8d6e2b68" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="28c86421-d3cc-4009-bec7-af0c0632e954" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com</con:endpoint>
+      <con:request>{
+  "firstName": "Test",
+  "lastName": "Value",
+  "email": "user@example.com",
+  "message": "Hi",
+  "helpRequestType": "1",
+  "invitingUser": "Test",
+  "invitingSourceRefId": "164360"
+}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/invitations/share/invitations/share</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

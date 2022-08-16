@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="a78f71e1-719a-43d4-98a8-b32bc8c26f30" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Manage_Vendor" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a78f71e1-719a-43d4-98a8-b32bc8c26f30fileName">Manage_Vendor</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Get Vendor List" id="9b03e06d-c70d-435d-8d5f-6fc5d92646e3">
+    <con:settings/>
+    <con:config service="C19_GetVendorList" resourcePath="/retailers/relationships" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Get Vendor List" id="783267bb-d419-4457-a86f-a6535490a0fe" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/retailers/relationships</con:endpoint>
+        <con:request>{
+  "pageNumber": 0,
+  "pageSize": 0,
+  "sortDirection": 1,
+  "orderBy": "",
+  "retailerFtsId": 153337,
+  "distributorName": "",
+  "ftsStoreId": 0,
+  "relationshipStatuses": [
+    6
+  ]
+}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/retailers/relationships/retailers/relationships</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Lookup_Relationship_status" id="5a65e84b-0ac7-4253-802b-cb820c360bf5">
+    <con:settings/>
+    <con:config service="C19_Relationship_status" resourcePath="/lookup/relationships/statuses" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Lookup_Relationship_status" id="82b55f8a-5291-42be-9ad7-03a866c842be" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/lookup/relationships/statuses</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://dev-api.fintech.com/lookup/relationships/statuses/lookup/relationships/statuses</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Get vendor data" id="95f8d118-a1ca-45ae-aa98-6fd35b764dd3">
+    <con:settings/>
+    <con:config service="C19_get_Vendor_Data" resourcePath="/retailers/{retailerFtsId}/relationships/{distributorFtsId}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Get vendor data" id="65e2c279-d517-448a-92b3-8d2d455ee38a" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://dev-api.fintech.com/retailers/{retailerFtsId}/relationships/{distributorFtsId}</con:endpoint>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="retailerFtsId" value=""/>
+          <con:entry key="distributorFtsId" value=""/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Top Products" id="4c4f6ea5-8bd5-40fa-8914-9bb4943eacf5">
+    <con:settings/>
+    <con:config service="C19_Top5Products_Vendor" resourcePath="" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Top Products" id="73f38d43-536f-49da-84f4-9cb0a00f8394" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/distributors/(?&lt;distributorId>\d+)/top-products</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://dev-api.fintech.com/distributors/(</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="b45046dc-58b2-4e90-bd53-9facc85f2303" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="71805aa3-4832-47ce-9afb-91420cf2c291" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>distributorId</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetLocations_NotIn_Relationship" id="935aacdc-9d09-445e-a65c-8cdcb877de75">
+    <con:settings/>
+    <con:config service="C19_Get_Locations_NotInExistingList" resourcePath="/retailers/{ftsId}/relationships/potential/locations/{ditftsId}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetLocations_NotIn_Relationship" id="94d27b45-e1e8-443b-820f-175d0edf4304" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/retailers/{ftsId}/relationships/potential/locations/{ditftsId}</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://dev-api.fintech.com/retailers/ftsId/relationships/potential/locations/ditftsId/retailers/ftsId/relationships/potential/locations/ditftsId</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="029828a1-a337-4089-9095-721520ddd14a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="f1eed03d-7eeb-4b78-9b46-24aa8e525978" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>ftsId</con:entry>
+          <con:entry>ditftsId</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

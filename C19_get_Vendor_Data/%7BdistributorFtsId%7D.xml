@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="{distributorFtsId}" path="/retailers/{retailerFtsId}/relationships/{distributorFtsId}" id="3786d440-b34d-4f5f-8db8-245ea41a805c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="3786d440-b34d-4f5f-8db8-245ea41a805cfileName">%7BdistributorFtsId%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>retailerFtsId</con:name>
+      <con:value>retailerFtsId</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>retailerFtsId</con:default>
+    </con:parameter>
+    <con:parameter required="true">
+      <con:name>distributorFtsId</con:name>
+      <con:value>distributorFtsId</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>distributorFtsId</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="16380b05-210f-4f8c-80c6-3e1fb72d9fa0" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="65e2c279-d517-448a-92b3-8d2d455ee38a" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://dev-api.fintech.com/retailers/{retailerFtsId}/relationships/{distributorFtsId}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="retailerFtsId" value=""/>
+        <con:entry key="distributorFtsId" value=""/>
+      </con:parameters>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="retailers" path="/lookup/decline-reasons/retailers" id="1caa4ff7-a133-4a33-9055-c95378711639" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="1caa4ff7-a133-4a33-9055-c95378711639fileName">retailers</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="c8e6abe2-5095-4f31-be8c-a5a4c2430c5f" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="65ec0418-47af-4765-bcf1-23bdd48ea493" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://dev-api.fintech.com/lookup/decline-reasons/retailers</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="(" path="" id="5d217c60-fa87-4c4a-a98d-56c7f3d3781d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5d217c60-fa87-4c4a-a98d-56c7f3d3781dfileName">%28</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>distributorId</con:name>
+      <con:style>QUERY</con:style>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="fba61ee6-618f-4d7e-b38e-8d65ea84286f" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Top products" id="73f38d43-536f-49da-84f4-9cb0a00f8394" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/distributors/(?&lt;distributorId>\d+)/top-products</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://dev-api.fintech.com/distributors/(</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>distributorId</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

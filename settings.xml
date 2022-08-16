@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ac2ffcbf-d0a4-496a-a7f9-9dde1348f3a5" created="3.30.0" activeEnvironment="Default environment" name="C19-Kong-APIs" updated="3.40.1" encryptionMode="Not encrypted" resourceRoot="" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer>
+    <con:oAuth2Profile>
+      <con:name>Access_token</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSK-s2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDv-tx4woU-DIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw-9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+    <con:oAuth2Profile>
+      <con:name>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSKs2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDvtx4woUDIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+    <con:oAuth2Profile>
+      <con:name>Access_Token</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSKs2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDvtx4woUDIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+    <con:oAuth2Profile>
+      <con:name>Test_C19</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSKs2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDvtx4woUDIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:oAuth2Flow>JWT_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+    <con:oAuth2Profile>
+      <con:name>OAuth 2</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2FsbHlAbGlxdW9yLnN0b3JlIiwiaXNzIjoiaHR0cHM6Ly9maW50ZWNoLWRldi51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI3MTcwYTk1ODcxNTAwMDZhNTM2OWQxIiwiYXVkIjpbImh0dHBzOi8vZGV2LWF1dGgwLWtvbmctcG9jLWFwaS5maW50ZWNoLmNvbSIsImh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY2MDA1MTc3MSwiZXhwIjoxNjYwMTM4MTcxLCJhenAiOiJZUWJYc1pON08zSVp4cm9jQkN1QVVGYnJwN1NqalpwMCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6W119.gVAXSO0RmuTHjAeI74pQ9fpHCZQy0l1qj9nARuVgroRIe04NOtHjWL6KsU8q2S9rkSnN7poF6fgWd3OKK0DsGgqXd-1fg9iUikMD0MMgpxiGz_Coy144OPeJU8WkxpeKZlGXBtQSuubCZcJhZ0kuV2ktdbnllgkKUJdNXrNE-KJH3F2Rcaedlfyace-4e24qiaQ2z7L4FMBAOvrct4Bg8WFZhBS8Csm8EdZQ3GuTFCJHXQ3wL_-KiHDIFu3Fjb4ukJ0upGbenhRx4ZwH4Ru6ZWrJykkOgfyvvlmf00cJf-dw2EJdFn4ZABS7cAGKEYvcry0ZVG7vLhJg23K2YJF4Wg</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+    <con:oAuth2Profile>
+      <con:name>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSK-s2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDv-tx4woU-DIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw-9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSK-s2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDv-tx4woU-DIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw-9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+  </con:oAuth2ProfileContainer>
+  <con:oAuth1ProfileContainer/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to ReadyAPI functional tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository>
+    <con:oAuth20AuthEntry>
+      <con:name>Access_token</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSK-s2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDv-tx4woU-DIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw-9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
+    <con:oAuth20AuthEntry>
+      <con:name>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSKs2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDvtx4woUDIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
+    <con:oAuth20AuthEntry>
+      <con:name>Access_Token</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSKs2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDvtx4woUDIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
+    <con:oAuth20AuthEntry>
+      <con:name>Test_C19</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSKs2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDvtx4woUDIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:oAuth2Flow>JWT_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
+    <con:oAuth20AuthEntry>
+      <con:name>OAuth 2</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2FsbHlAbGlxdW9yLnN0b3JlIiwiaXNzIjoiaHR0cHM6Ly9maW50ZWNoLWRldi51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI3MTcwYTk1ODcxNTAwMDZhNTM2OWQxIiwiYXVkIjpbImh0dHBzOi8vZGV2LWF1dGgwLWtvbmctcG9jLWFwaS5maW50ZWNoLmNvbSIsImh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY2MDA1MTc3MSwiZXhwIjoxNjYwMTM4MTcxLCJhenAiOiJZUWJYc1pON08zSVp4cm9jQkN1QVVGYnJwN1NqalpwMCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6W119.gVAXSO0RmuTHjAeI74pQ9fpHCZQy0l1qj9nARuVgroRIe04NOtHjWL6KsU8q2S9rkSnN7poF6fgWd3OKK0DsGgqXd-1fg9iUikMD0MMgpxiGz_Coy144OPeJU8WkxpeKZlGXBtQSuubCZcJhZ0kuV2ktdbnllgkKUJdNXrNE-KJH3F2Rcaedlfyace-4e24qiaQ2z7L4FMBAOvrct4Bg8WFZhBS8Csm8EdZQ3GuTFCJHXQ3wL_-KiHDIFu3Fjb4ukJ0upGbenhRx4ZwH4Ru6ZWrJykkOgfyvvlmf00cJf-dw2EJdFn4ZABS7cAGKEYvcry0ZVG7vLhJg23K2YJF4Wg</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
+    <con:oAuth20AuthEntry>
+      <con:name>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSK-s2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDv-tx4woU-DIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw-9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldqS1puT3hhZlJqN0Y3a2JkbGY1ciJ9.eyJodHRwOi8vZmludGVjaC5uZXQvcm9sZXMiOltdLCJodHRwczovL2V4YW1wbGUuY29tL2VtYWlsIjoic2VhbkB0ZXN0LmNvbSIsImlzcyI6Imh0dHBzOi8vZmludGVjaC1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyYmU3NDkyOWVjZGUzYWQ2YTQ4MjczOSIsImF1ZCI6WyJodHRwczovL2Rldi1hdXRoMC1rb25nLXBvYy1hcGkuZmludGVjaC5jb20iLCJodHRwczovL2ZpbnRlY2gtZGV2LnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTY2NTEyNTQsImV4cCI6MTY1NjczNzY1NCwiYXpwIjoiWVFiWHNaTjdPM0laeHJvY0JDdUFVRmJycDdTampacDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOltdfQ.mSbd3caex3PWF0wlNxzR8VaB48hRHb7myJzbDcQ1fOESEupY7vEuhDTfj0Op_aSK-s2DTe6TBoWlVaTsGkxOACC2c20UONHaN_JliiNW0fvwDiV4YwS2TYxEX0ToVobysA4WDv-tx4woU-DIlSraoN5qGkRbppSlTMZAYdosc58lJah9ugsGtDjJXlISEbm7Hz6E4OJmo9n8h6Njv9JOpSGj8dphc3gFxUtvVi23uy7hKDtmBxa3apLvJwzGnw-9mfE6OLmFrEA7q2YcG4VBoMChVtFOdPvpuXl3xv3E6SQoFO41IpFcOggPA4oiBSnlS4DhG9Bh34Sb5ZKXCSJM_A</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
+  </con:authRepository>
+  <con:tags/>
+</con:soapui-project>

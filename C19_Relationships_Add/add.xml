@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="add" path="/retailers/relationships/add" id="da5932be-4d92-4e81-bd0a-0dcf459d07df" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="da5932be-4d92-4e81-bd0a-0dcf459d07dffileName">add</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="3a645fdc-322b-4fa9-a808-384cd01f55dc" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="49254f5d-c941-424f-8635-4a9e1185dd58" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/retailers/relationships/add</con:endpoint>
+      <con:request>{
+	"retailerFtsId":153337,
+	"ftsStoreId":,
+	"distributorFtsIds":[7090,6804,508]
+	}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/relationships/add/relationships/add</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

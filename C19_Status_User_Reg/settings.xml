@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="151cfffc-e602-4b8d-8d87-d5140c1c10ad" name="C19_Status_User_Reg" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="151cfffc-e602-4b8d-8d87-d5140c1c10adfileName">C19_Status_User_Reg</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="https://dev-api.fintech.com/registration/{98131}/status.json">
+    <con:part>
+      <con:url>https://dev-api.fintech.com/registration/{98131}/status.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"https://dev-api.fintech.com/registration/{98131}/status","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/{stagingId}/status":{"description":"","get":{"description":"","responses":{"default":{"description":"Default response"}}},"parameters":[{"name":"stagingId","in":"path","required":true}]}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://dev-api.fintech.com/registration/{98131}/status</con:endpoint>
+  </con:endpoints>
+</con:interface>

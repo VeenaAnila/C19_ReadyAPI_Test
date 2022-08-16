@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="02bcdbf1-9e92-42d4-8843-f6e7d32a244f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="{stagingId} Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [{stagingId}] located at [/​staging/{stagingId}]</con:description>
+  <con:settings>
+    <con:setting id="02bcdbf1-9e92-42d4-8843-f6e7d32a244ffileName">%7BstagingId%7D-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="923dfc2d-bf87-4f6c-ab21-5a33a953a88f">
+    <con:settings/>
+    <con:config service="C19_Registration Data_Staging" resourcePath="" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="35cf34f1-b42c-48fa-8181-e261d6a084b1" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/​staging/98435</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://dev-api.fintech.com/staging/%7BstagingId%7D/​staging/98131</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

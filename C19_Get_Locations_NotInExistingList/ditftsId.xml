@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="ditftsId" path="/retailers/{ftsId}/relationships/potential/locations/{ditftsId}" id="aad44646-385f-4382-81f7-df69272f0d37" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="aad44646-385f-4382-81f7-df69272f0d37fileName">ditftsId</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>ftsId</con:name>
+      <con:value>153337</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>153337</con:default>
+    </con:parameter>
+    <con:parameter>
+      <con:name>ditftsId</con:name>
+      <con:value>153337</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>153337</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="374beb9b-c869-46ea-8d29-13e59fe7d10c" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="GetLocations_NotIn_Relationship" id="94d27b45-e1e8-443b-820f-175d0edf4304" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/retailers/{ftsId}/relationships/potential/locations/{ditftsId}</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://dev-api.fintech.com/retailers/ftsId/relationships/potential/locations/ditftsId/retailers/ftsId/relationships/potential/locations/ditftsId</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>ftsId</con:entry>
+        <con:entry>ditftsId</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

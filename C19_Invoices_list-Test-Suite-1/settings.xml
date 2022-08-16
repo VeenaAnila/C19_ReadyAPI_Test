@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="7bd4cf97-e18d-40c2-80c4-7136f2c17f95" name="C19_Invoices_list Test Suite 1" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test suite generated for the REST service [C19_Invoices_list]</con:description>
+  <con:settings>
+    <con:setting id="7bd4cf97-e18d-40c2-80c4-7136f2c17f95fileName">C19_Invoices_list-Test-Suite-1</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

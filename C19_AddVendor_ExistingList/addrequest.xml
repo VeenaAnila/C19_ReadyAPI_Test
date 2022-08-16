@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="addrequest" path="/companies/distributor/addrequest" id="1c04f5c6-70d7-47e1-ac5e-06579c687889" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="1c04f5c6-70d7-47e1-ac5e-06579c687889fileName">addrequest</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="761b50f6-3d66-45c6-85cf-84d674b8b36c" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="e4e40250-0134-4aaf-b322-de83feafbe07" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/companies/distributor/addrequest</con:endpoint>
+      <con:request>{
+  "name": "Kathy",
+  "address": {
+    "address1":"311 East Grand River Avenue",
+    "address2":"",
+    "city":"Detroit",
+    "state":"MI",
+    "zip": "48226",
+    "geoData": {
+      "geoLocationSource": 0,
+      "geoLocationId": "",
+      "latitude": null,
+      "longitude": null    }
+  },
+  "contactName": "Mark",
+  "contactEmail": "mark@test.com",
+  "contactPhone": "244-545-6676"}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/companies/distributor/addrequest/companies/distributor/addrequest</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

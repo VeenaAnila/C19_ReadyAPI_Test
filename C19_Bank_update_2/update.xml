@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="update" path="/banking/update" id="4ce10df8-7dfa-461a-8a4e-337578a0d5b8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="4ce10df8-7dfa-461a-8a4e-337578a0d5b8fileName">update</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="144d15ce-a1d8-4673-90c2-441b16491420" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="2c1c7f24-9ee1-4fab-a462-10990ef087d9" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/banking/update</con:endpoint>
+      <con:request>{
+	"accountNumber":"1234",
+	"bankName":"BANK OF AMERICA, N.A.",
+	"federalTaxId":"34-2534566",
+	"routingNumber":"121000358",
+	"stagingId":"98307",
+	"companyName":"Salty Dog Dezz",
+	"isValidated":true,
+	"filterType":2,
+	"address":
+	{
+		"address1":"Carnival",
+		"address2":"3109,West",
+		"city":"Chicago",
+		"state":"IN",
+		"zip":"55432",
+		"geoData":
+		{
+			"geoLocationSource":0,
+			"geoLocationId":"",
+			"latitude":null,
+			"longitude":null
+			}}}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/banking/update/banking/update</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

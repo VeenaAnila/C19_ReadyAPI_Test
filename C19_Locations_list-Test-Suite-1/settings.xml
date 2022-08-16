@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="96359e2d-f75f-4039-831f-fcb266cab682" name="C19_Locations_list Test Suite 1" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test suite generated for the REST service [C19_Locations_list]</con:description>
+  <con:settings>
+    <con:setting id="96359e2d-f75f-4039-831f-fcb266cab682fileName">C19_Locations_list-Test-Suite-1</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

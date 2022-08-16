@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="6c9b8806-8740-4377-9141-0ecf34b03152" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Add_Vendor" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6c9b8806-8740-4377-9141-0ecf34b03152fileName">Add_Vendor</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source_Add_vendor" id="87d586f6-587b-4e7d-a245-92148561a05d">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/Users/vanilakumari/OneDrive - Fintech/Documents/Datasource_docs/ReadyApi_reccomended_vendorlist.xlsx</file>
+          <worksheet>Sheet1</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>zipCode</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Choose Locations" id="ee7c2b61-9f94-4b95-a830-38f574c74856">
+    <con:settings/>
+    <con:config service="C19_ChooseLocations" resourcePath="/locations" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Choose Locations" id="40c36621-c364-4765-a113-5dc836163efc" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/locations</con:endpoint>
+        <con:request>{
+  "shippingState": "",
+  "orderByColumn": "",
+  "sortingOrientation": 1,
+  "pageNumber": 1,
+  "pageSize": 10,
+  "orderType": 1,
+  "retailerFtsId": 153337,
+  "locationName": "",
+  "status": 1,
+  "relationshipStatus": 1}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/locations</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Recommended Distributor list" id="7414e67d-9670-479d-8c4f-0cd9973bfc62">
+    <con:settings/>
+    <con:config service="C19_Recommended_Vendor_list" resourcePath="/distributors/recommended" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Recommended Distributor list" id="05de9727-87d0-4d58-9fca-2eb54fbd0413" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com</con:endpoint>
+        <con:request>{\r
+   "zipCode" : "${Data Source#zipCode}"\r
+}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/distributors/recommended</con:originalUri>
+        <con:assertion type="JsonPath Existence Match" id="6d784e07-67f8-4a8e-ad4f-2232ae4e936b" name="Check for existence of [distributorId]">
+          <con:configuration>
+            <path>$['result']['distributors'][*]['distributorId']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="fd9bffb7-e591-4e86-ae34-05f81f402345" name="Check for existence of [name]">
+          <con:configuration>
+            <path>$['result']['distributors'][*]['name']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="ed51cbc3-f9af-4b21-9448-d438f9ea230c" name="Check for existence of [aka]">
+          <con:configuration>
+            <path>$['result']['distributors'][*]['aka']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="db5352c0-c4fe-4329-b21d-bdb74f2d0621" name="Check for existence of [productClasses]">
+          <con:configuration>
+            <path>$['result']['distributors'][*]['productClasses']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="6d282138-835f-4ea0-b819-ca5645c14d91" name="Check for existence of [topProducts]">
+          <con:configuration>
+            <path>$['result']['distributors'][*]['topProducts']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes>
+          <con:addedBasicAuthenticationTypes>SPNEGO/Kerberos</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Add new distributor from existing list" id="ca6a9933-935d-4ac5-8581-22cb6cd3b091">
+    <con:settings/>
+    <con:config service="C19_AddVendor_ExistingList" resourcePath="/companies/distributor/addrequest" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Add new distributor from existing list" id="e4e40250-0134-4aaf-b322-de83feafbe07" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/companies/distributor/addrequest</con:endpoint>
+        <con:request>{
+  "name": "Kathy",
+  "address": {
+    "address1":"311 East Grand River Avenue",
+    "address2":"",
+    "city":"Detroit",
+    "state":"MI",
+    "zip": "48226",
+    "geoData": {
+      "geoLocationSource": 0,
+      "geoLocationId": "",
+      "latitude": null,
+      "longitude": null    }
+  },
+  "contactName": "Mark",
+  "contactEmail": "mark@test.com",
+  "contactPhone": "244-545-6676"}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/companies/distributor/addrequest/companies/distributor/addrequest</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Distributor search" id="8828f302-bd62-4d9f-8393-48d7a0ef9228">
+    <con:settings/>
+    <con:config service="C19_VendorSearch_ProductName" resourcePath="/distributors/search" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Distributor search" id="8bd2e46d-5685-4399-a375-195bc36134a4" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/distributors/search</con:endpoint>
+        <con:request>{
+	"locationId":10660,
+	"searchTerm":"Dark ",
+	"filters":
+	{
+		"zipCode":"32174",
+	"productClasses":["Spirits"]
+	}}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/distributors/search/distributors/search</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Review screen_Retailer relationship add" id="2c5cc650-67e2-45a9-a2f8-6717afbf0d04">
+    <con:settings/>
+    <con:config service="C19_Relationships_Add" resourcePath="/retailers/relationships/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Review screen_Retailer relationship add" id="49254f5d-c941-424f-8635-4a9e1185dd58" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/retailers/relationships/add</con:endpoint>
+        <con:request>{
+	"retailerFtsId":153337,
+	"ftsStoreId":,
+	"distributorFtsIds":[7090,6804,508]
+	}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/relationships/add/relationships/add</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="27a61d7c-7b18-4277-83e7-4c57dc0673a8">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source_Recommended_vendor_list</dataSourceStep>
+      <targetStep>Choose Locations</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

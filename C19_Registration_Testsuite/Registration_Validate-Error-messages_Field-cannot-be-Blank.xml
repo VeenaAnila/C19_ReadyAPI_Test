@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="14b3bad6-bdd9-4cad-b91b-b6930037dc2a" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Registration_Validate Error messages_Field cannot be Blank" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="14b3bad6-bdd9-4cad-b91b-b6930037dc2afileName">Registration_Validate-Error-messages_Field-cannot-be-Blank</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="d697acf7-e7a7-4af1-aea9-4d09bffbad04">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/Users/vanilakumari/OneDrive - Fintech/Documents/Datasource_docs/ReadyApi_User_Reg_Error messages.xlsx</file>
+          <worksheet>Sheet1</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>firstName</con:property>
+      <con:property>lastName</con:property>
+      <con:property>email</con:property>
+      <con:property>password</con:property>
+      <con:property>phone</con:property>
+      <con:property>locationName</con:property>
+      <con:property>industry</con:property>
+      <con:property>token</con:property>
+      <con:property>role</con:property>
+      <con:property>address1</con:property>
+      <con:property>address2</con:property>
+      <con:property>city</con:property>
+      <con:property>state</con:property>
+      <con:property>zip</con:property>
+      <con:property>geoLocationId</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request" id="939f5765-3720-411a-8cf7-1318d1797bf7">
+    <con:settings/>
+    <con:config service="C19_User_Registration" resourcePath="/registration/user/register" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="22e25a4e-334e-441d-93a8-48671a06b5b5" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/registration/user/register</con:endpoint>
+        <con:request>{\r
+   "firstName" : "${Data Source#firstName}",\r
+   "lastName" : "${Data Source#lastName}",\r
+   "email" : "${Data Source#email}",\r
+   "password" : "${Data Source#password}",\r
+   "phone" : "${Data Source#phone}",\r
+   "locationName" : "${Data Source#locationName}",\r
+   "industry" : "${Data Source#industry}",\r
+   "numberLocations" : 1,\r
+   "token" : "${Data Source#token}",\r
+   "role" : "${Data Source#role}",\r
+   "address" : {\r
+      "address1" : "${Data Source#address1}",\r
+      "address2" : "${Data Source#address2}",\r
+      "city" : "${Data Source#city}",\r
+      "state" : "${Data Source#state}",\r
+      "zip" : "${Data Source#zip}",\r
+      "geoData" : {
+         "geoLocationSource" : 1,
+         "geoLocationId" : "${Data Source#geoLocationId}",
+         "latitude" : 42.3363494,
+         "longitude" : -83.0467758
+      }
+
+   }\r
+}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/registration/user/register/registration/user/register</con:originalUri>
+        <con:assertion type="DataAndMetadataAssertion" id="4fb3a378-9718-482d-bde6-311cfc86142b" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Email</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Email</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>5</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The Email already exists</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The Email is already in use</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Tom_luca6@test.com</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>FirstName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Contact FirstName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The FirstName cannot be blank</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Please enter Contact FirstName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>LastName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Contact LastName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The LastName cannot be blank</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Please enter Contact LastName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>LocationName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>LocationName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The LocationName cannot be blank</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Please enter LocationName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][4]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Phone</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][4]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Phone</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][4]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][4]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The Phone cannot be blank</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][4]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Please enter Phone</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][4]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][4]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][5]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][5]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Phone</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][5]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>4</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][5]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The  value must be length than 10 numbers</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][5]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Please enter Phone length than 10 numbers</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][5]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][5]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][6]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Address.Address1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][6]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Address1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][6]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][6]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The Address.Address1 cannot be blank</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][6]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Please enter Address1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][6]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][6]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['statusCode']</con:path>
+              <con:element>statusCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>400</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "validationErrors": [
+    {
+      "field": "Email",
+      "fieldAliasForUser": "Email",
+      "errorCode": "5",
+      "developerMessage": "The Email already exists",
+      "userMessage": "The Email is already in use",
+      "attemptedValue": "Tom_luca6@test.com",
+      "doNotUseAttributeMsg": false
+    },
+    {
+      "field": "FirstName",
+      "fieldAliasForUser": "Contact FirstName",
+      "errorCode": "1",
+      "developerMessage": "The FirstName cannot be blank",
+      "userMessage": "Please enter Contact FirstName",
+      "attemptedValue": "",
+      "doNotUseAttributeMsg": false
+    },
+    {
+      "field": "LastName",
+      "fieldAliasForUser": "Contact LastName",
+      "errorCode": "1",
+      "developerMessage": "The LastName cannot be blank",
+      "userMessage": "Please enter Contact LastName",
+      "attemptedValue": "",
+      "doNotUseAttributeMsg": false
+    },
+    {
+      "field": "LocationName",
+      "fieldAliasForUser": "LocationName",
+      "errorCode": "1",
+      "developerMessage": "The LocationName cannot be blank",
+      "userMessage": "Please enter LocationName",
+      "attemptedValue": "",
+      "doNotUseAttributeMsg": false
+    },
+    {
+      "field": "Phone",
+      "fieldAliasForUser": "Phone",
+      "errorCode": "1",
+      "developerMessage": "The Phone cannot be blank",
+      "userMessage": "Please enter Phone",
+      "attemptedValue": "",
+      "doNotUseAttributeMsg": false
+    },
+    {
+      "field": "",
+      "fieldAliasForUser": "Phone",
+      "errorCode": "4",
+      "developerMessage": "The  value must be length than 10 numbers",
+      "userMessage": "Please enter Phone length than 10 numbers",
+      "attemptedValue": "",
+      "doNotUseAttributeMsg": false
+    },
+    {
+      "field": "Address.Address1",
+      "fieldAliasForUser": "Address1",
+      "errorCode": "1",
+      "developerMessage": "The Address.Address1 cannot be blank",
+      "userMessage": "Please enter Address1",
+      "attemptedValue": "",
+      "doNotUseAttributeMsg": false
+    }
+  ],
+  "statusCode": "400"
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="e3f47fee-5482-495e-a186-9d15cb3b248a">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source</dataSourceStep>
+      <targetStep>REST Request</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>d697acf7-e7a7-4af1-aea9-4d09bffbad04</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>939f5765-3720-411a-8cf7-1318d1797bf7</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>e3f47fee-5482-495e-a186-9d15cb3b248a</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

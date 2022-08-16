@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="d1117776-20c0-4d7f-af5d-236ee64302fb" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Set_Up_Bank_Account" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [update] located at [/banking/update]</con:description>
+  <con:settings>
+    <con:setting id="d1117776-20c0-4d7f-af5d-236ee64302fbfileName">Set_Up_Bank_Account</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="825de6de-c7b3-4ae3-949d-bd93cf4a9848">
+    <con:settings/>
+    <con:config service="C19_Bank_update_2" resourcePath="/banking/update" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="2c1c7f24-9ee1-4fab-a462-10990ef087d9" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/banking/update</con:endpoint>
+        <con:request>{\r
+   "accountNumber" : "1234567891",\r
+   "bankName" : "${#[C19_Registration_Testsuite#GetBankname_using_RoutingNumber#Request 1]#Response#$['customer_name']}",\r
+   "federalTaxId" : "76-5643423",\r
+   "routingNumber" : "121000358",\r
+   "stagingId" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['stagingId']}",\r
+   "companyName" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['stagingData']['companyData']['companyName']}",\r
+   "isValidated" : true,\r
+   "filterType" : 2,\r
+   "address" : {\r
+      "address1" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['stagingData']['companyData']['addressLine1']}",\r
+      "address2" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['stagingData']['companyData']['addressLine2']}",\r
+      "city" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['stagingData']['companyData']['city']}",\r
+      "state" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['stagingData']['companyData']['state']}",\r
+      "zip" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['stagingData']['companyData']['zipCode']}",\r
+      "geoData" : {\r
+         "geoLocationSource" : 0,\r
+         "geoLocationId" : "",\r
+         "latitude" : null,\r
+         "longitude" : null\r
+      }\r
+   }\r
+}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/banking/update/banking/update</con:originalUri>
+        <con:assertion type="DataAndMetadataAssertion" id="c9bac8f8-d6d5-488b-9c1d-d319f289bfa2" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['result']['registrationComplete']['registrationComplete']</con:path>
+              <con:element>registrationComplete</con:element>
+              <con:operatorId>3</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true,false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['result']['registrationComplete']['bankingComplete']</con:path>
+              <con:element>bankingComplete</con:element>
+              <con:operatorId>3</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true,false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['result']['registrationComplete']['relationshipsComplete']</con:path>
+              <con:element>relationshipsComplete</con:element>
+              <con:operatorId>3</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true,false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['result']['registrationComplete']['incompleteItems']</con:path>
+              <con:element>incompleteItems</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>[]</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>4</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['result']['success']</con:path>
+              <con:element>success</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['statusCode']</con:path>
+              <con:element>statusCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>200</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "result": {
+    "registrationComplete": {
+      "registrationComplete": true,
+      "bankingComplete": true,
+      "relationshipsComplete": true,
+      "incompleteItems": []
+    },
+    "success": true
+  },
+  "statusCode": "200"
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

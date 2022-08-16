@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="" path="/lookups/businesstypes" id="5d4079f6-acb2-4d79-a50c-650415edf873" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5d4079f6-acb2-4d79-a50c-650415edf873fileName">%2Flookups%2Fbusinesstypes</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 2" id="674290e8-d8d8-42f4-9160-b882911330b6" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="2e38de2d-ac17-4a7e-8739-417f91f6bdfa" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://dev-api.fintech.com/lookup/businesstypes</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

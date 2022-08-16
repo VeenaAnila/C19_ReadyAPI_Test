@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="register" path="/registration/user/register" id="ba656259-6797-435c-b94e-affd4c9c242c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ba656259-6797-435c-b94e-affd4c9c242cfileName">register</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="da9968d3-a300-4724-91c3-20e52a3ac08c" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="22e25a4e-334e-441d-93a8-48671a06b5b5" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/registration/user/register</con:endpoint>
+      <con:request>{
+	"firstName":"Luca",
+	"lastName":"Tom",
+	"email":"anjali12@test.com",
+	"password":"P@ss1234",
+	"phone":"244-545-6676",
+	"locationName":"Carnival",
+	"industry":"14",
+	"numberLocations":0,
+	"token":"",
+	"role":"Staff Accountant",
+"address":
+{
+	"address1":"311 East Grand River Avenue",
+	"address2":"",
+	"city":"Detroit",
+	"state":"MI",
+	"zip":"48226",
+	"geoData":
+	{
+		"geoLocationSource":1,
+		"geoLocationId":"ChIJCRYZ9C0tO4gRgr-q2eNjhlc",
+		"latitude":42.3363494,
+		"longitude":-83.04677579999999
+		}}}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/registration/user/register/registration/user/register</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

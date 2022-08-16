@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="complete" path="/registration/complete" id="44f78527-c827-4562-b980-a1ccf02c63d0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="44f78527-c827-4562-b980-a1ccf02c63d0fileName">complete</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="d45fc0ce-95cd-4085-9278-bdc689723bac" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="0a2de806-c95f-4a82-9369-621f74d702fb" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/registration/complete</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://dev-api.fintech.com/registration/complete/registration/complete</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

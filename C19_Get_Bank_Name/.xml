@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="" path="" id="e9b0d115-2dd7-4ed9-b682-954e75c9df0b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e9b0d115-2dd7-4ed9-b682-954e75c9df0bfileName"/>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="f9de05c6-9dbf-486f-aba2-2fc52ad3f098" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>rn</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="1f72e1c3-620d-4548-bd0e-4dd23504898c" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://www.routingnumbers.info/api/data.json?rn={routingNumber}</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://www.routingnumbers.info/api/data.json</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="rn" value="063100277"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>rn</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

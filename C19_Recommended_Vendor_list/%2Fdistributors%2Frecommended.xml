@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="" path="/distributors/recommended" id="f7e43cd4-3f4e-4027-ad9c-c38629b417ab" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f7e43cd4-3f4e-4027-ad9c-c38629b417abfileName">%2Fdistributors%2Frecommended</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="a2a9097c-8fc2-4024-a560-52fe0d34628a" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="05de9727-87d0-4d58-9fca-2eb54fbd0413" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com</con:endpoint>
+      <con:request>{
+	"zipCode" : "33647"
+}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/distributors/recommended</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes>
+        <con:addedBasicAuthenticationTypes>SPNEGO/Kerberos</con:addedBasicAuthenticationTypes>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

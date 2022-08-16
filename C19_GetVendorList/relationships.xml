@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="relationships" path="/retailers/relationships" id="faaab3cc-cb44-427d-b1cc-3aabed20e593" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="faaab3cc-cb44-427d-b1cc-3aabed20e593fileName">relationships</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="24fe1f77-2615-4c9b-bdc6-d52428e80cf3" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="783267bb-d419-4457-a86f-a6535490a0fe" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/retailers/relationships</con:endpoint>
+      <con:request>{
+  "pageNumber": 0,
+  "pageSize": 0,
+  "sortDirection": 1,
+  "orderBy": "",
+  "retailerFtsId": 153337,
+  "distributorName": "",
+  "ftsStoreId": 0,
+  "relationshipStatuses": [
+    6
+  ]
+}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/retailers/relationships/retailers/relationships</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

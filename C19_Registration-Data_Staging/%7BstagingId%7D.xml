@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="{stagingId}" path="" id="1870e4ae-e76c-4a06-bd4d-8155ee48217c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="1870e4ae-e76c-4a06-bd4d-8155ee48217cfileName">%7BstagingId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="21ccdf42-fdea-4aab-aed8-90aa290b1766" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="35cf34f1-b42c-48fa-8181-e261d6a084b1" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com​/staging/98435</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://dev-api.fintech.com/staging/%7BstagingId%7D/​staging/98131</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

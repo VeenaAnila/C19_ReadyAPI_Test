@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="update " path="/relationships/update " id="a40b0d85-c7ca-44de-a0d1-84e40afa378f" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a40b0d85-c7ca-44de-a0d1-84e40afa378ffileName">update%C2%A0</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="2efd2795-832b-4e29-884a-e153a315de1a" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="37a890e1-1c58-4194-a58e-1a01e913ab51" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/relationships/update </con:endpoint>
+      <con:request>{
+  "stagingId": 98131,
+  "relationshipsToAdd": [
+    {
+      "tempId": 1833,
+      "distributors": [
+        {
+          "distributorId": 6804,
+          "distributorName": "Premier Beverage Co.dba Breakthru Beverage Florida"
+        }
+      ]
+    }
+  ]
+}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/relationships/update%C2%A0</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

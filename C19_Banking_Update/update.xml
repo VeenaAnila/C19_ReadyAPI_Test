@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="update" path="/banking​/update" id="33dfe376-b113-44d9-9e38-30ad9b51c3ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="33dfe376-b113-44d9-9e38-30ad9b51c3eefileName">update</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="0bc9f559-1a8e-4ae0-9596-876cd646fe16" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="82dc157c-608b-4201-85f8-e4332930442c" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/banking​/update</con:endpoint>
+      <con:request>{
+	"accountNumber":"1234678768",
+	"bankName":"BANK OF AMERICA, N.A.",
+	"federalTaxId":"34-2534568",
+	"routingNumber":"121000358",
+	"stagingId":"98307",
+	"companyName":"Fintech Inc",
+	"isValidated":true,
+	"filterType": 2,
+	"address":
+	{
+		"address1":"11223",
+		"address2":"Salty Dogzxc",
+		"city":"Detroit",
+		"state":"MI",
+		"zip":"48226",
+		"geoData":
+		{
+		"geoLocationSource":0,
+		"geoLocationId":"",
+		"latitude":null,
+		"longitude":null
+		}}}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/banking%E2%80%8B/update/banking​/update</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="aa1600b8-ac26-4356-ab0a-87dbf3f8a6a6" name="C19_Vendor_Management_Testsuite" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="aa1600b8-ac26-4356-ab0a-87dbf3f8a6a6fileName">C19_Vendor_Management_Testsuite</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

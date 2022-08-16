@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="d3befc2d-2c60-4a5d-a69c-5cf607a8f738" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Vendor_Request" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d3befc2d-2c60-4a5d-a69c-5cf607a8f738fileName">Vendor_Request</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Decline reasons lookup" id="5543d99d-09cf-4e1a-bd5c-30afa5ef3346">
+    <con:settings/>
+    <con:config service="C19_Decline_Reasons_lookup" resourcePath="/lookup/decline-reasons/retailers" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Decline reasons lookup" id="65ec0418-47af-4765-bcf1-23bdd48ea493" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/lookup/decline-reasons/retailers</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://dev-api.fintech.com/lookup/decline-reasons/retailers/lookup/decline-reasons/retailers</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="4831f946-ab36-48fe-adc7-5e700d49b5e4" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="5fe28806-3266-4e79-b166-3574d3494f17" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

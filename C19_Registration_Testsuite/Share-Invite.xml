@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="bbf2dce9-ef91-41c6-8205-c0c174b3f3be" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Share Invite" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [share] located at [/invitations/share]</con:description>
+  <con:settings>
+    <con:setting id="bbf2dce9-ef91-41c6-8205-c0c174b3f3befileName">Share-Invite</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="be843bc7-72b6-45f4-9f15-8d85ccf5e37a">
+    <con:settings/>
+    <con:config service="C19_Share_Invite" resourcePath="/invitations/share" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="28c86421-d3cc-4009-bec7-af0c0632e954" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com</con:endpoint>
+        <con:request>{\r
+   "firstName" : "Test",\r
+   "lastName" : "Value",\r
+   "email" : "user@example.com",\r
+   "message" : "Hi",\r
+   "helpRequestType" : "1",\r
+   "invitingUser" : "Test",\r
+   "invitingSourceRefId" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['sourceReferenceId']}"\r
+}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/invitations/share/invitations/share</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

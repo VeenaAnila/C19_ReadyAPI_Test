@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="c1f502aa-5e4b-409e-b49c-6eafeb7ae8fa" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Registration_Validate Error message_Exceeds character limnit" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c1f502aa-5e4b-409e-b49c-6eafeb7ae8fafileName">Registration_Validate-Error-message_Exceeds-character-limnit</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="6c21c6ec-8b9b-4035-b2e1-b23e18ad9644">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/Users/vanilakumari/OneDrive - Fintech/Documents/Datasource_docs/ReadyApi_User_Reg_Error messages.xlsx</file>
+          <worksheet>Sheet1</worksheet>
+          <cell>A3</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>firstName</con:property>
+      <con:property>lastName</con:property>
+      <con:property>email</con:property>
+      <con:property>password</con:property>
+      <con:property>phone</con:property>
+      <con:property>locationName</con:property>
+      <con:property>industry</con:property>
+      <con:property>token</con:property>
+      <con:property>role</con:property>
+      <con:property>address1</con:property>
+      <con:property>address2</con:property>
+      <con:property>city</con:property>
+      <con:property>state</con:property>
+      <con:property>zip</con:property>
+      <con:property>geoLocationSource</con:property>
+      <con:property>geoLocationId</con:property>
+      <con:property>latitude</con:property>
+      <con:property>longitude</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request" id="447949e2-2dc4-47fa-9ccd-9d5b5fffd662">
+    <con:settings/>
+    <con:config service="C19_User_Registration" resourcePath="/registration/user/register" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="22e25a4e-334e-441d-93a8-48671a06b5b5" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/registration/user/register</con:endpoint>
+        <con:request>{
+   "firstName" : "${Data Source#firstName}",
+   "lastName" : "${Data Source#lastName}",
+   "email" : "${Data Source#email}",
+   "password" : "${Data Source#password}",
+   "phone" : "${Data Source#phone}",
+   "locationName" : "${Data Source#locationName}",
+   "industry" : "${Data Source#industry}",
+   "numberLocations" : 0,
+   "token" : "",
+   "role" : "${Data Source#role}",
+   "address" : {
+      "address1" : "${Data Source#address1}",
+      "address2" : "${Data Source#address2}",
+      "city" : "${Data Source#city}",
+      "state" : "${Data Source#state}",
+      "zip" : "${Data Source#zip}",
+      "geoData" : {
+         "geoLocationSource" : 1,
+         "geoLocationId" : "${Data Source#geoLocationId}",
+         "latitude" : 42.3363494,
+         "longitude" : -83.0467758
+
+      }
+   }
+}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/registration/user/register/registration/user/register</con:originalUri>
+        <con:assertion type="DataAndMetadataAssertion" id="5fd97009-0534-4679-8027-b6894960b948" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>FirstName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Contact FirstName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The FirstName cannot be more than 20 characters.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Please enter Contact FirstName with no more than 20 characters.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Tom hanks abcsfghytrewdsaqwerfg</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][0]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>LastName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Contact LastName</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The LastName cannot be more than 30 characters.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Please enter Contact LastName with no more than 30 characters.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Luke abvgfdrsetyhgfewikjyhgrtfedws</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][1]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Address.Address1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Address1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The Address.Address1 cannot be more than 40 characters.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Please enter Address1 with no more than 40 characters.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>sgfsufusygfsuygfuygfuygfuygfuyagfyufsgduyfageuyfgaueygfugujhgdhjgfjdhgfjdshfgd</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][2]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['field']</con:path>
+              <con:element>field</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Address.Address2</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['fieldAliasForUser']</con:path>
+              <con:element>fieldAliasForUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Address2</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['developerMessage']</con:path>
+              <con:element>developerMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The Address.Address2 cannot be more than 40 characters.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['userMessage']</con:path>
+              <con:element>userMessage</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Please enter Address2 with no more than 40 characters.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['attemptedValue']</con:path>
+              <con:element>attemptedValue</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Suite Bhgfsuhgfudhfiduhfudihfdhfdhgfhgfdgfdhgfhgdfhdfjhgvdjhfgjdhfgjdfkjdshf</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validationErrors'][3]['doNotUseAttributeMsg']</con:path>
+              <con:element>doNotUseAttributeMsg</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['statusCode']</con:path>
+              <con:element>statusCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>400</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "validationErrors": [
+    {
+      "field": "FirstName",
+      "fieldAliasForUser": "Contact FirstName",
+      "errorCode": "2",
+      "developerMessage": "The FirstName cannot be more than 20 characters.",
+      "userMessage": "Please enter Contact FirstName with no more than 20 characters.",
+      "attemptedValue": "Tom hanks abcsfghytrewdsaqwerfg",
+      "doNotUseAttributeMsg": false
+    },
+    {
+      "field": "LastName",
+      "fieldAliasForUser": "Contact LastName",
+      "errorCode": "2",
+      "developerMessage": "The LastName cannot be more than 30 characters.",
+      "userMessage": "Please enter Contact LastName with no more than 30 characters.",
+      "attemptedValue": "Luke abvgfdrsetyhgfewikjyhgrtfedws",
+      "doNotUseAttributeMsg": false
+    },
+    {
+      "field": "Address.Address1",
+      "fieldAliasForUser": "Address1",
+      "errorCode": "2",
+      "developerMessage": "The Address.Address1 cannot be more than 40 characters.",
+      "userMessage": "Please enter Address1 with no more than 40 characters.",
+      "attemptedValue": "sgfsufusygfsuygfuygfuygfuygfuyagfyufsgduyfageuyfgaueygfugujhgdhjgfjdhgfjdshfgd",
+      "doNotUseAttributeMsg": false
+    },
+    {
+      "field": "Address.Address2",
+      "fieldAliasForUser": "Address2",
+      "errorCode": "2",
+      "developerMessage": "The Address.Address2 cannot be more than 40 characters.",
+      "userMessage": "Please enter Address2 with no more than 40 characters.",
+      "attemptedValue": "Suite Bhgfsuhgfudhfiduhfudihfdhfdhgfhgfdgfdhgfhgdfhdfjhgvdjhfgjdhfgjdfkjdshf",
+      "doNotUseAttributeMsg": false
+    }
+  ],
+  "statusCode": "400"
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="f9dd0b65-47b2-4ec1-91cd-ebaf36fea030">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source</dataSourceStep>
+      <targetStep>REST Request</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>6c21c6ec-8b9b-4035-b2e1-b23e18ad9644</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>447949e2-2dc4-47fa-9ccd-9d5b5fffd662</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>f9dd0b65-47b2-4ec1-91cd-ebaf36fea030</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

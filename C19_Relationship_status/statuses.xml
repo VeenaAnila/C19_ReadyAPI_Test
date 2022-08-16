@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="statuses" path="/lookup/relationships/statuses" id="478f1d5a-9949-44fc-9fc9-aa59816eca3d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="478f1d5a-9949-44fc-9fc9-aa59816eca3dfileName">statuses</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 2" id="7f3c1a03-1f8a-4f25-aecf-52f3a6f36a05" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="82b55f8a-5291-42be-9ad7-03a866c842be" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/lookup/relationships/statuses</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://dev-api.fintech.com/lookup/relationships/statuses/lookup/relationships/statuses</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

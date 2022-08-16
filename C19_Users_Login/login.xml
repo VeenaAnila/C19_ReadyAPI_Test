@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="login" path="/users/login" id="d5441a4c-5c3f-4b5c-83f3-5416dae1341a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d5441a4c-5c3f-4b5c-83f3-5416dae1341afileName">login</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="13e562ee-0a9f-45c2-a77c-98405a0d5c4a" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="8c304ec8-a5e0-481a-92fc-346ead57eb35" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/users/login</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://dev-api.fintech.com/users/login/users/login</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

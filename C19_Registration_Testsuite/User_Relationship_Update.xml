@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="938b497a-aa94-45c9-bb8c-913a47f09954" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="User_Relationship_Update" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [update ] located at [/relationships/update ]</con:description>
+  <con:settings>
+    <con:setting id="938b497a-aa94-45c9-bb8c-913a47f09954fileName">User_Relationship_Update</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="92064fa0-f66e-48f3-b4ad-5a3e74cc9e99">
+    <con:settings/>
+    <con:config service="C19_Relationships_Update" resourcePath="/relationships/update " methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="37a890e1-1c58-4194-a58e-1a01e913ab51" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/relationships/update </con:endpoint>
+        <con:request>{\r
+   "stagingId" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['stagingId']}",\r
+   "relationshipsToAdd" : [\r
+      {\r
+         "tempId" : "${#[C19_Registration_Testsuite#Validate_User_Registration#Request 1]#Response#$['result']['stagingData']['storeData'][0]['tempId']}",\r
+         "distributors" : [\r
+            {\r
+               "distributorId" : "${#[C19_Registration_Testsuite#Reccomended_Distributors#Request 1]#Response#$['result']['distributors'][0]['distributorId']}",\r
+               "distributorName" : "${#[C19_Registration_Testsuite#Reccomended_Distributors#Request 1]#Response#$['result']['distributors'][0]['name']}"\r
+            }\r
+         ]\r
+      }\r
+   ]\r
+}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/relationships/update%C2%A0</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

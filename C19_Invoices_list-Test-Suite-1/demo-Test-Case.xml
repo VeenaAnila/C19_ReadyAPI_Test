@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="4a02837a-47ed-41a1-8db1-6d26469723c0" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="demo Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [demo] located at [/reports/invoices]</con:description>
+  <con:settings>
+    <con:setting id="4a02837a-47ed-41a1-8db1-6d26469723c0fileName">demo-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="f26f2f83-4962-4fcf-aae7-5074d15838fa">
+    <con:settings/>
+    <con:config service="C19_Invoices_list" resourcePath="/reports/invoices" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="12108d19-5466-4e1d-9550-917936e93ec0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://dev-api.fintech.com/reports/invoices</con:endpoint>
+        <con:request>{
+	"retailerFtsId":153337,
+	"distributorFtsId":0,
+	"transactionType":"Debits",
+	"startDate":"2022-02-03T04:55:54.174Z",
+	"endDate":"2022-04-03T04:55:54.174Z",
+	"dateType":"Invoice",
+	"pageNumber":1,
+	"pageSize":50,
+	"storeNumber":"000704",
+	"status":"",
+	"searchTerm":""
+	}</con:request>
+        <con:originalUri>https://dev-api.fintech.com/invoices/demo/invoices/demo</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

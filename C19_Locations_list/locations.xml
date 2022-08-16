@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="locations" path="/locations" id="a9c9cb60-d3e5-4d09-88ed-3579a30742bc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a9c9cb60-d3e5-4d09-88ed-3579a30742bcfileName">locations</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="88ef9d2b-6750-4872-b136-e3393d27104d" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="c52f4d49-a03f-4ea2-8a6b-1084899edf3a" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/locations</con:endpoint>
+      <con:request>{
+  "shippingState": "FL",
+  "orderByColumn": "",
+  "sortingOrientation": 1,
+  "pageNumber": 1,
+  "pageSize": 10,
+  "orderType": 1,
+  "retailerFtsId": 153337,
+  "locationName": "",
+  "status": 1,
+  "relationshipStatus": 1
+}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/locations</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="approve " path="/relationships/approve " id="07dde741-a577-412c-8daf-944be76f729f" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="07dde741-a577-412c-8daf-944be76f729ffileName">approve%C2%A0</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="b4c17247-8325-4fcb-9949-48e8b769106a" method="PATCH">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="c4f204d4-abf6-4ce0-81b2-1dc7fe278783" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/retailers/relationships/approve</con:endpoint>
+      <con:request>{
+  "retailerFtsId": 9277,
+  "bankId": 0,
+  "ftsSetupId": 0
+  //API for retriveing vendor data is not availkable yet
+}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/retailers/relationships/approve</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

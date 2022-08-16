@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="v2" path="/druid/v2/" id="8c88a895-f73b-4fc1-97b6-0536f80b73cd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8c88a895-f73b-4fc1-97b6-0536f80b73cdfileName">v2</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="26c13415-1c21-4b52-a4fc-8107c37ead94" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="c6187b88-05a6-42a4-ac8e-8b9a51fd1314" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://dev-api.fintech.com/druid/v2/</con:endpoint>
+      <con:request>{
+	
+		{
+			"name": "TOTAL SPEND",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"queryType\": \"timeseries\",\n  \"dataSource\": {\n    \"type\": \"table\",\n    \"name\": \"DBX_DRUID_SS_DATA\"\n  },\n  \"intervals\": {\n    \"type\": \"intervals\",\n    \"intervals\": [\n      \"2021-10-22T00:00:00.000Z/2022-04-22T00:00:00.000Z\"\n    ]\n  },\n  \"descending\": false,\n  \"virtualColumns\": [],\n  \"filter\": {\n    \"type\": \"selector\",\n    \"dimension\": \"COMPANY_NAME\",\n    \"value\": \"BJ's Restaurants, Inc.\",\n    \"extractionFn\": null\n  },\n  \"granularity\": {\n    \"type\": \"all\"\n  },\n  \"aggregations\": [\n    {\n      \"type\": \"doubleSum\",\n      \"name\": \"a0\",\n      \"fieldName\": \"TOTAL_SPEND\",\n      \"expression\": null\n    }\n  ],\n  \"postAggregations\": [],\n  \"limit\": 2147483647,\n  \"context\": {\n    \"sqlOuterLimit\": 101,\n    \"sqlQueryId\": \"471b6275-cb5e-4efe-8dd9-e97094c69386\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.fintech.com/druid/v2/",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"fintech",
+						"com"
+					],
+					"path": [
+						"druid",
+						"v2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AVERAGE SPEND PER INVOICE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"queryType\": \"timeseries\",\n  \"dataSource\": {\n    \"type\": \"table\",\n    \"name\": \"DBX_DRUID_SS_DATA\"\n  },\n  \"intervals\": {\n    \"type\": \"intervals\",\n    \"intervals\": [\n      \"2021-10-22T00:00:00.000Z/2022-04-22T00:00:00.000Z\"\n    ]\n  },\n  \"descending\": false,\n  \"virtualColumns\": [],\n  \"filter\": {\n    \"type\": \"selector\",\n    \"dimension\": \"COMPANY_NAME\",\n    \"value\": \"BJ's Restaurants, Inc.\",\n    \"extractionFn\": null\n  },\n  \"granularity\": {\n    \"type\": \"all\"\n  },\n  \"aggregations\": [\n    {\n      \"type\": \"doubleSum\",\n      \"name\": \"a0\",\n      \"fieldName\": \"TOTAL_SPEND\",\n      \"expression\": null\n    },\n    {\n      \"type\": \"cardinality\",\n      \"name\": \"a1\",\n      \"fields\": [\n        {\n          \"type\": \"default\",\n          \"dimension\": \"INVOICE_NUMBER\",\n          \"outputName\": \"INVOICE_NUMBER\",\n          \"outputType\": \"LONG\"\n        }\n      ],\n      \"byRow\": false,\n      \"round\": true\n    }\n  ],\n  \"postAggregations\": [\n    {\n      \"type\": \"expression\",\n      \"name\": \"p0\",\n      \"expression\": \"(\\\"a0\\\" / \\\"a1\\\")\",\n      \"ordering\": null\n    }\n  ],\n  \"limit\": 2147483647,\n  \"context\": {\n    \"sqlOuterLimit\": 101,\n    \"sqlQueryId\": \"c7c374cb-0e32-448a-9299-bac135d63efa\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DruidUrl}}",
+					"host": [
+						"{{DruidUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AVERAGE INVOICES PER WEEK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"queryType\": \"timeseries\",\n  \"dataSource\": {\n    \"type\": \"table\",\n    \"name\": \"DBX_DRUID_SS_DATA\"\n  },\n  \"intervals\": {\n    \"type\": \"intervals\",\n    \"intervals\": [\n      \"2021-10-22T00:00:00.000Z/2022-04-22T00:00:00.000Z\"\n    ]\n  },\n  \"descending\": false,\n  \"virtualColumns\": [],\n  \"filter\": {\n    \"type\": \"selector\",\n    \"dimension\": \"COMPANY_NAME\",\n    \"value\": \"BJ's Restaurants, Inc.\",\n    \"extractionFn\": null\n  },\n  \"granularity\": {\n    \"type\": \"all\"\n  },\n  \"aggregations\": [\n    {\n      \"type\": \"cardinality\",\n      \"name\": \"a0\",\n      \"fields\": [\n        {\n          \"type\": \"default\",\n          \"dimension\": \"INVOICE_NUMBER\",\n          \"outputName\": \"INVOICE_NUMBER\",\n          \"outputType\": \"LONG\"\n        }\n      ],\n      \"byRow\": false,\n      \"round\": true\n    }\n  ],\n  \"postAggregations\": [\n    {\n      \"type\": \"expression\",\n      \"name\": \"p0\",\n      \"expression\": \"(\\\"a0\\\" / 52)\",\n      \"ordering\": null\n    }\n  ],\n  \"limit\": 2147483647,\n  \"context\": {\n    \"sqlOuterLimit\": 101,\n    \"sqlQueryId\": \"2c614dfd-7e99-4869-8b34-49a1c92b03ea\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DruidUrl}}",
+					"host": [
+						"{{DruidUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TOTAL SPEND OVER TIME",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"queryType\": \"topN\",\n  \"dataSource\": {\n    \"type\": \"table\",\n    \"name\": \"DBX_DRUID_SS_DATA\"\n  },\n  \"virtualColumns\": [\n    {\n      \"type\": \"expression\",\n      \"name\": \"v0\",\n      \"expression\": \"timestamp_floor(\\\"__time\\\",'P1W',null,'UTC')\",\n      \"outputType\": \"LONG\"\n    }\n  ],\n  \"dimension\": {\n    \"type\": \"default\",\n    \"dimension\": \"v0\",\n    \"outputName\": \"d0\",\n    \"outputType\": \"LONG\"\n  },\n  \"metric\": {\n    \"type\": \"numeric\",\n    \"metric\": \"a0\"\n  },\n  \"threshold\": 101,\n  \"intervals\": {\n    \"type\": \"intervals\",\n    \"intervals\": [\n      \"2021-10-22T00:00:00.000Z/2022-04-22T00:00:00.000Z\"\n    ]\n  },\n  \"filter\": {\n    \"type\": \"selector\",\n    \"dimension\": \"COMPANY_NAME\",\n    \"value\": \"BJ's Restaurants, Inc.\",\n    \"extractionFn\": null\n  },\n  \"granularity\": {\n    \"type\": \"all\"\n  },\n  \"aggregations\": [\n    {\n      \"type\": \"doubleSum\",\n      \"name\": \"a0\",\n      \"fieldName\": \"TOTAL_SPEND\",\n      \"expression\": null\n    }\n  ],\n  \"postAggregations\": [],\n  \"context\": {\n    \"sqlOuterLimit\": 101,\n    \"sqlQueryId\": \"7127bc3d-9ab3-4378-9e69-65642a384502\"\n  },\n  \"descending\": false\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DruidUrl}}",
+					"host": [
+						"{{DruidUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MY TOP 5 DISTRIBUTORS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"queryType\": \"topN\",\n  \"dataSource\": {\n    \"type\": \"table\",\n    \"name\": \"DBX_DRUID_SS_DATA\"\n  },\n  \"virtualColumns\": [],\n  \"dimension\": {\n    \"type\": \"default\",\n    \"dimension\": \"DISTRIBUTOR_NAME\",\n    \"outputName\": \"d0\",\n    \"outputType\": \"STRING\"\n  },\n  \"metric\": {\n    \"type\": \"numeric\",\n    \"metric\": \"a0\"\n  },\n  \"threshold\": 5,\n  \"intervals\": {\n    \"type\": \"intervals\",\n    \"intervals\": [\n      \"2021-10-22T00:00:00.000Z/2022-04-22T00:00:00.000Z\"\n    ]\n  },\n  \"filter\": {\n    \"type\": \"selector\",\n    \"dimension\": \"COMPANY_NAME\",\n    \"value\": \"BJ's Restaurants, Inc.\",\n    \"extractionFn\": null\n  },\n  \"granularity\": {\n    \"type\": \"all\"\n  },\n  \"aggregations\": [\n    {\n      \"type\": \"doubleSum\",\n      \"name\": \"a0\",\n      \"fieldName\": \"TOTAL_SPEND\",\n      \"expression\": null\n    }\n  ],\n  \"postAggregations\": [],\n  \"context\": {\n    \"sqlOuterLimit\": 101,\n    \"sqlQueryId\": \"9d8e43db-006f-406f-a2f1-1f93fa8eb2d5\"\n  },\n  \"descending\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DruidUrl}}",
+					"host": [
+						"{{DruidUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TOTAL SPEND BY PRODUCT CATEGORY",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"queryType\": \"topN\",\n  \"dataSource\": {\n    \"type\": \"table\",\n    \"name\": \"DBX_DRUID_SS_DATA\"\n  },\n  \"virtualColumns\": [],\n  \"dimension\": {\n    \"type\": \"default\",\n    \"dimension\": \"PRODUCT_CATEGORY\",\n    \"outputName\": \"d0\",\n    \"outputType\": \"STRING\"\n  },\n  \"metric\": {\n    \"type\": \"numeric\",\n    \"metric\": \"a0\"\n  },\n  \"threshold\": 100,\n  \"intervals\": {\n    \"type\": \"intervals\",\n    \"intervals\": [\n      \"2021-10-22T00:00:00.000Z/2022-04-22T00:00:00.000Z\"\n    ]\n  },\n  \"filter\": {\n    \"type\": \"and\",\n    \"fields\": [\n      {\n        \"type\": \"selector\",\n        \"dimension\": \"COMPANY_NAME\",\n        \"value\": \"BJ's Restaurants, Inc.\",\n        \"extractionFn\": null\n      },\n      {\n        \"type\": \"not\",\n        \"field\": {\n          \"type\": \"selector\",\n          \"dimension\": \"PRODUCT_CATEGORY\",\n          \"value\": \"Nomatch\",\n          \"extractionFn\": null\n        }\n      },\n      {\n        \"type\": \"not\",\n        \"field\": {\n          \"type\": \"selector\",\n          \"dimension\": \"PRODUCT_CATEGORY\",\n          \"value\": \"Misc\",\n          \"extractionFn\": null\n        }\n      }\n    ]\n  },\n  \"granularity\": {\n    \"type\": \"all\"\n  },\n  \"aggregations\": [\n    {\n      \"type\": \"doubleSum\",\n      \"name\": \"a0\",\n      \"fieldName\": \"TOTAL_SPEND\",\n      \"expression\": null\n    }\n  ],\n  \"postAggregations\": [],\n  \"context\": {\n    \"sqlOuterLimit\": 101,\n    \"sqlQueryId\": \"2d86cce6-735d-46e5-9db4-191753c25e40\"\n  },\n  \"descending\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DruidUrl}}",
+					"host": [
+						"{{DruidUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MY TOP 10 PRODUCTS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"queryType\": \"topN\",\n  \"dataSource\": {\n    \"type\": \"table\",\n    \"name\": \"DBX_DRUID_SS_DATA\"\n  },\n  \"virtualColumns\": [],\n  \"dimension\": {\n    \"type\": \"default\",\n    \"dimension\": \"PRODUCT_NAME\",\n    \"outputName\": \"d0\",\n    \"outputType\": \"STRING\"\n  },\n  \"metric\": {\n    \"type\": \"dimension\",\n    \"previousStop\": null,\n    \"ordering\": {\n      \"type\": \"lexicographic\"\n    }\n  },\n  \"threshold\": 10,\n  \"intervals\": {\n    \"type\": \"intervals\",\n    \"intervals\": [\n      \"2021-10-22T00:00:00.000Z/2022-04-22T00:00:00.000Z\"\n    ]\n  },\n  \"filter\": {\n    \"type\": \"and\",\n    \"fields\": [\n      {\n        \"type\": \"selector\",\n        \"dimension\": \"COMPANY_NAME\",\n        \"value\": \"BJ's Restaurants, Inc.\",\n        \"extractionFn\": null\n      },\n      {\n        \"type\": \"in\",\n        \"dimension\": \"PRODUCT_CATEGORY\",\n        \"values\": [\n          \"Wine\",\n          \"Beer\",\n          \"Spirits\"\n        ]\n      }\n    ]\n  },\n  \"granularity\": {\n    \"type\": \"all\"\n  },\n  \"aggregations\": [\n    {\n      \"type\": \"doubleSum\",\n      \"name\": \"a0\",\n      \"fieldName\": \"TOTAL_SPEND\",\n      \"expression\": null\n    }\n  ],\n  \"postAggregations\": [],\n  \"context\": {\n    \"sqlOuterLimit\": 101,\n    \"sqlQueryId\": \"ecb95d0d-4366-4377-848d-986831c151e3\"\n  },\n  \"descending\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DruidUrl}}",
+					"host": [
+						"{{DruidUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET LOCATIONS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"queryType\": \"topN\",\n  \"dataSource\": {\n    \"type\": \"table\",\n    \"name\": \"DBX_DRUID_SS_DATA\"\n  },\n  \"virtualColumns\": [],\n  \"dimension\": {\n    \"type\": \"default\",\n    \"dimension\": \"LOCATION_NAME\",\n    \"outputName\": \"d0\",\n    \"outputType\": \"STRING\"\n  },\n  \"metric\": {\n    \"type\": \"dimension\",\n    \"previousStop\": null,\n    \"ordering\": {\n      \"type\": \"lexicographic\"\n    }\n  },\n  \"threshold\": 101,\n  \"intervals\": {\n    \"type\": \"intervals\",\n    \"intervals\": [\n      \"-146136543-09-08T08:23:32.096Z/146140482-04-24T15:36:27.903Z\"\n    ]\n  },\n  \"filter\": null,\n  \"granularity\": {\n    \"type\": \"all\"\n  },\n  \"aggregations\": [],\n  \"postAggregations\": [],\n  \"context\": {\n    \"sqlOuterLimit\": 101,\n    \"sqlQueryId\": \"fab9247a-02d5-4f99-9f70-9a6cd6ca3783\"\n  },\n  \"descending\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.fintech.com/druid/v2/",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"fintech",
+						"com"
+					],
+					"path": [
+						"druid",
+						"v2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top 10 products",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Total Spend Over Time",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetLocation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46ZHJ1aWRhZG1pbkAyMDIy",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        queryType: \"topN\",\n        dataSource: {\n          type: \"table\",\n          name: \"Insightsdb_Homepage\",\n        },\n        virtualColumns: [],\n        dimension: {\n          type: \"default\",\n          dimension: \"LOCATION_NAME\",\n          outputName: \"d0\",\n          outputType: \"STRING\",\n        },\n        metric: {\n          type: \"dimension\",\n          previousStop: null,\n          ordering: {\n            type: \"lexicographic\",\n          },\n        },\n        threshold: 1001,\n        intervals: {\n          type: \"intervals\",\n          intervals: [\n            \"-146136543-09-08T08:23:32.096Z/146140482-04-24T15:36:27.903Z\",\n          ],\n        },\n        filter: {\n          type: \"selector\",\n          dimension: \"COMPANY_NAME\",\n          value: \"BJ's Restaurants, Inc.\",\n          extractionFn: null,\n        },\n        granularity: {\n          type: \"all\",\n        },\n        aggregations: [],\n        postAggregations: [],\n        context: {\n          sqlOuterLimit: 1001,\n          sqlQueryId: \"7aa043f4-58ef-4d8e-941d-c9eadc922bdc\",\n        },\n        descending: false,\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DruidUrl}}",
+					"host": [
+						"{{DruidUrl}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}</con:request>
+      <con:originalUri>https://dev-api.fintech.com/druid/v2/druid/v2/</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>OAuth 2</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>
